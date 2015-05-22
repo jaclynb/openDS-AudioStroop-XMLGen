@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import sceneCoreXML
+import sceneFuncs
 
 version = raw_input("Version number? ")
 
@@ -18,6 +19,8 @@ fd.write(sceneCoreXML.sounds)
 fd.write(sceneCoreXML.modelsOpenTag)
 fd.write(sceneCoreXML.grass)
 fd.write(sceneCoreXML.car)
+
+sceneFuncs.makeRoad(fd, -24990.0, 24990.0)
 
 fd.write(sceneCoreXML.modelsCloseTag)
 fd.write(sceneCoreXML.geometries)
