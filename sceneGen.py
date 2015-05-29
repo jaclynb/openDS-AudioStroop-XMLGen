@@ -21,6 +21,17 @@ fd.write(sceneCoreXML.grass)
 fd.write(sceneCoreXML.car)
 
 sceneFuncs.makeRoad(fd, -24990.0, 24990.0)
+sceneFuncs.startObjects(fd, 24500.0)
+sceneFuncs.endObjects(fd, 20250.0)
+
+place = 24200.0
+sign0 = "wrongLane"
+sign1 = "correctLane"
+sign2 = "wrongLane"
+
+for i in range(20):
+	sceneFuncs.makeBridgeSigns(fd, i, place, sign0, sign1, sign2)
+	place = place - 200
 
 fd.write(sceneCoreXML.modelsCloseTag)
 fd.write(sceneCoreXML.geometries)
