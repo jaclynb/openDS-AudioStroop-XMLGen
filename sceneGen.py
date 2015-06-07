@@ -22,16 +22,24 @@ fd.write(sceneCoreXML.car)
 
 sceneFuncs.makeRoad(fd, -24990.0, 24990.0)
 sceneFuncs.startObjects(fd, 24500.0)
-sceneFuncs.endObjects(fd, 20250.0)
+sceneFuncs.endObjects(fd, 21400.0)
 
-place = 24200.0
-sign0 = "wrongLane"
-sign1 = "correctLane"
-sign2 = "wrongLane"
+lane0 = ["correctLane", "wrongLane", "wrongLane"]
+lane1 = ["wrongLane", "correctLane", "wrongLane"]
+lane2 = ["wrongLane", "wrongLane", "correctLane"]
 
-for i in range(20):
+signList = [lane2, lane1, lane0, lane2, lane0, lane2, lane1, lane2, lane0, \
+lane2, lane0, lane1, lane2, lane1, lane0, lane1, lane0, lane1]
+
+placeList = [304.26, 445.96, 588.72, 738.52, 878.71, 1021.25, 1171.75, 1322.00, 1464.40, 1611.25, \
+1763.29, 1915.87, 2059.67, 2228.43, 2416.43, 2560.00, 2701.51, 2849.52]
+
+for i in range(18):
+	place = 24350.0 - placeList[i]
+	sign0 = signList[i][0]
+	sign1 = signList[i][1]
+	sign2 = signList[i][2]
 	sceneFuncs.makeBridgeSigns(fd, i, place, sign0, sign1, sign2)
-	place = place - 200
 
 fd.write(sceneCoreXML.modelsCloseTag)
 fd.write(sceneCoreXML.geometries)
