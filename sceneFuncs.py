@@ -299,7 +299,7 @@ def makeSign(fd, num, place, signNum, kind):
       else: # "correctLane"
             sign = 'Models/sign_panels/LaneChange/panel_sign.scene'
 
-      horizPosList = [-3.7, 0.0, 3.7]
+      horizPosList = [3.7, 0.0, -3.7]
       horizPos = str(horizPosList[signNum])
       fd.write('\t\t<model id="BLC_Test_Block0_Trial' + num + '_ContainerElement' + str(signNum) + '" key="' + sign + '" ref="">\n')
       fd.write('\t\t\t<mass>0</mass>\n')
