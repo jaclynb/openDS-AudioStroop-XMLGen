@@ -33,6 +33,8 @@ code += '\t\t</activity>\n'
 
 targetLaneList = ["2", "1", "0", "2", "0", "2", "1", "2", "0", "2", "0", "1", "2", "1", "0", "1", "0", "1"]
 startLaneList =  ["1", "2", "1", "0", "2", "0", "2", "1", "2", "0", "2", "0", "1", "2", "1", "0", "1", "0"]
+soundIDList = ["left1", "right1", "right1", "left2", "right2", "left2", "right1", "left1", "right2", \
+				"left2", "right2", "left1", "left1", "right1", "right1", "left1", "right1", "left1"]
 
 for i in range(18):
 	sign = "BLC_Test_Block0_Trial" + str(i) + "_ContainerElement0"
@@ -69,6 +71,11 @@ for i in range(18):
 	activityId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_setupBrakeLaneChangeReactionTimer"
 	code += interactionFuncs.makeActivity(activityId, "", contents)
 
+	params = interactionFuncs.makeParameter("soundID", soundIDList[i]);
+	contents += interactionFuncs.makeAction("0.0", "playSound", "1", params);
+	activityId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_Sound_Stimulus"
+	code += interactionFuncs.makeActivity(activityId, "", contents)
+
 code += '\t</activities>\n'
 code += '\t<triggers>\n'
 code += '\t\t<trigger id="BLC_Test_Start_Trigger" priority="1">\n'
@@ -100,6 +107,19 @@ for i in range(18):
 	contents = interactionFuncs.makeTriggerContents(activities, conditions)
 	
 	triggerId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0"
+	code += interactionFuncs.makeTrigger(triggerId, "1", contents)
+
+	refStimulus = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_Sound_Stimulus"
+	activities = "\t\t\t\t<activities>\n"
+	activities += "\t\t\t\t\t" + interactionFuncs.makeActivtyRefOnly(refStimulus)
+	activities += "\t\t\t\t</activities>\n"
+
+	conditionContents = "collideWith:BLC_Test_Block0_Trial" + str(i) +"_Stimulus_Trigger0"
+	conditions = "\t\t\t\t" + interactionFuncs.makeCondition(conditionContents)
+
+	contents = interactionFuncs.makeTriggerContents(activities, conditions)
+	
+	triggerId = "BLC_Test_Block0_Trial" + str(i) + "_Stimulus_Trigger0"
 	code += interactionFuncs.makeTrigger(triggerId, "1", contents)
 
 code += '\t</triggers>\n'

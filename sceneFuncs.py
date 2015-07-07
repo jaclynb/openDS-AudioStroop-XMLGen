@@ -222,17 +222,49 @@ def endObjects(fd, place):
       fd.write('\t\t</model>\n\n')
 
 def makeBridgeSigns(fd, num, place, sign0, sign1, sign2):
-            makeTrigger(fd, num, place+40)
+            makeStimulusTrigger(fd, num, place+53.3)
+            makeSignTrigger(fd, num, place+40)
             makeBridge(fd, num, place)
             makeSign(fd, num, place, 0, sign0)
             makeSign(fd, num, place, 1, sign1)
             makeSign(fd, num, place, 2, sign2)
 
-def makeTrigger(fd, num, place):
+def makeSignTrigger(fd, num, place):
       num = str(num)
       place = str(place)
 
       fd.write('\t\t<model id="BLC_Test_Block0_Trial' + num + '_Trigger0" key="Models/trigger/trigger.scene" ref="">\n')
+      fd.write('\t\t\t<mass>0</mass>\n')
+      fd.write('\t\t\t<visible>false</visible>\n')
+      fd.write('\t\t\t<collisionShape>none</collisionShape>\n')
+      fd.write('\t\t\t<scale>\n')
+      fd.write('\t\t\t\t<vector jtype="java_lang_Float" size="3">\n')
+      fd.write('\t\t\t\t\t<entry>1.0</entry>\n')
+      fd.write('\t\t\t\t\t<entry>1.0</entry>\n')
+      fd.write('\t\t\t\t\t<entry>1.0</entry>\n')
+      fd.write('\t\t\t\t</vector>\n')
+      fd.write('\t\t\t</scale>\n')
+      fd.write('\t\t\t<rotation quaternion="false">\n')
+      fd.write('\t\t\t\t<vector jtype="java_lang_Float" size="3">\n')
+      fd.write('\t\t\t\t\t<entry>0.0</entry>\n')
+      fd.write('\t\t\t\t\t<entry>0.0</entry>\n')
+      fd.write('\t\t\t\t\t<entry>0.0</entry>\n')
+      fd.write('\t\t\t\t</vector>\n')
+      fd.write('\t\t\t</rotation>\n')
+      fd.write('\t\t\t<translation>\n')
+      fd.write('\t\t\t\t<vector jtype="java_lang_Float" size="3">\n')
+      fd.write('\t\t\t\t\t<entry>0.0</entry>\n')
+      fd.write('\t\t\t\t\t<entry>0.0</entry>\n')
+      fd.write('\t\t\t\t\t<entry>' + place + '</entry>\n')
+      fd.write('\t\t\t\t</vector>\n')
+      fd.write('\t\t\t</translation>\n')
+      fd.write('\t\t</model>\n')
+
+def makeStimulusTrigger(fd, num, place):
+      num = str(num)
+      place = str(place)
+
+      fd.write('\t\t<model id="BLC_Test_Block0_Trial' + num + '_Stimulus_Trigger0" key="Models/trigger/trigger.scene" ref="">\n')
       fd.write('\t\t\t<mass>0</mass>\n')
       fd.write('\t\t\t<visible>false</visible>\n')
       fd.write('\t\t\t<collisionShape>none</collisionShape>\n')

@@ -20,6 +20,34 @@ sounds = \
 \t\t\t<volume>0.5</volume>\n\
 \t\t\t<pitch>1.0</pitch>\n\
 \t\t</sound>\n\
+\t\t<sound id="left1" key="Sounds/AudioStroop/toneleft350msec.wav">\n\
+\t\t\t<positional value="false"/>\n\
+\t\t\t<directional value="false"/>\n\
+\t\t\t<loop>false</loop>\n\
+\t\t\t<volume>0.5</volume>\n\
+\t\t\t<pitch>1.0</pitch>\n\
+\t\t</sound>\n\
+\t\t<sound id="right1" key="Sounds/AudioStroop/toneright350msec.wav">\n\
+\t\t\t<positional value="false"/>\n\
+\t\t\t<directional value="false"/>\n\
+\t\t\t<loop>false</loop>\n\
+\t\t\t<volume>0.5</volume>\n\
+\t\t\t<pitch>1.0</pitch>\n\
+\t\t</sound>\n\
+\t\t<sound id="left2" key="Sounds/AudioStroop/consecutiveleft.wav">\n\
+\t\t\t<positional value="false"/>\n\
+\t\t\t<directional value="false"/>\n\
+\t\t\t<loop>false</loop>\n\
+\t\t\t<volume>0.5</volume>\n\
+\t\t\t<pitch>1.0</pitch>\n\
+\t\t</sound>\n\
+\t\t<sound id="right2" key="Sounds/AudioStroop/consecutiveright.wav">\n\
+\t\t\t<positional value="false"/>\n\
+\t\t\t<directional value="false"/>\n\
+\t\t\t<loop>false</loop>\n\
+\t\t\t<volume>0.5</volume>\n\
+\t\t\t<pitch>1.0</pitch>\n\
+\t\t</sound>\n\
 \t</sounds>\n\n'
 
 modelsOpenTag = \
