@@ -40,17 +40,17 @@ for i in range(18):
 	sign = "BLC_Test_Block0_Trial" + str(i) + "_ContainerElement0"
 	params = interactionFuncs.makeParameter("visible", "true")
 	params += interactionFuncs.makeParameter("id", sign)
-	contents = interactionFuncs.makeAction("0.1", "manipulateObject", "4", params)
+	contents = interactionFuncs.makeAction("0.0", "manipulateObject", "1", params)
 	
 	sign = "BLC_Test_Block0_Trial" + str(i) + "_ContainerElement1"
 	params = interactionFuncs.makeParameter("visible", "true")
 	params += interactionFuncs.makeParameter("id", sign)
-	contents += interactionFuncs.makeAction("0.1", "manipulateObject", "4", params)
+	contents += interactionFuncs.makeAction("0.0", "manipulateObject", "1", params)
 	
 	sign = "BLC_Test_Block0_Trial" + str(i) + "_ContainerElement2"
 	params = interactionFuncs.makeParameter("visible", "true")
 	params += interactionFuncs.makeParameter("id", sign)
-	contents += interactionFuncs.makeAction("0.1", "manipulateObject", "4", params)
+	contents += interactionFuncs.makeAction("0.0", "manipulateObject", "1", params)
 	
 	activityId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_makeVisible_BLC_Test_Block0_Trial" + str(i) + "_ContainerElements"
 	code += interactionFuncs.makeActivity(activityId, "", contents)
@@ -72,7 +72,7 @@ for i in range(18):
 	code += interactionFuncs.makeActivity(activityId, "", contents)
 
 	params = interactionFuncs.makeParameter("soundID", soundIDList[i]);
-	contents += interactionFuncs.makeAction("0.0", "playSound", "1", params);
+	contents = interactionFuncs.makeAction("0.0", "playSound", "1", params);
 	activityId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_Sound_Stimulus"
 	code += interactionFuncs.makeActivity(activityId, "", contents)
 

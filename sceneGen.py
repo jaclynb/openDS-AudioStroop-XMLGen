@@ -21,7 +21,7 @@ fd.write(sceneCoreXML.grass)
 fd.write(sceneCoreXML.car)
 
 sceneFuncs.makeRoad(fd, -24990.0, 24990.0)
-sceneFuncs.startObjects(fd, 24500.0)
+sceneFuncs.startObjects(fd, 24350.0)
 sceneFuncs.endObjects(fd, 21400.0)
 
 lane0 = ["correctLane", "wrongLane", "wrongLane"]
@@ -35,7 +35,7 @@ placeList = [304.26, 445.96, 588.72, 738.52, 878.71, 1021.25, 1171.75, 1322.00, 
 1763.29, 1915.87, 2059.67, 2228.43, 2416.43, 2560.00, 2701.51, 2849.52]
 
 for i in range(18):
-	place = 24350.0 - placeList[i]
+	place = 24500.0 - placeList[i]
 	sign0 = signList[i][0]
 	sign1 = signList[i][1]
 	sign2 = signList[i][2]
