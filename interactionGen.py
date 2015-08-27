@@ -75,9 +75,9 @@ def makeParameter(name, value):
     return param
 
 def makeTrigger(triggerId, priority, contents):
-    trig = '\t\t\t<trigger id="' + triggerId + '" priority="' + priority + '">\n'
+    trig = '\t\t<trigger id="' + triggerId + '" priority="' + priority + '">\n'
     trig += contents
-    trig += '\t\t\t</trigger>\n'
+    trig += '\t\t</trigger>\n'
     return trig
 
 def makeTriggerContents(activities, conditions):
@@ -136,13 +136,13 @@ def makeTriggerActivities():
     for i in range(18):
         refElements = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_makeVisible_BLC_Test_Block0_Trial" + str(i) + "_ContainerElements"
         refReactionTimer = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_setupBrakeLaneChangeReactionTimer"
-        activities = "\t\t\t\t<activities>\n"
-        activities += "\t\t\t\t\t" + makeActivtyRefOnly(refElements)
-        activities += "\t\t\t\t\t" + makeActivtyRefOnly(refReactionTimer)
-        activities += "\t\t\t\t</activities>\n"
+        activities = "\t\t\t<activities>\n"
+        activities += "\t\t\t\t" + makeActivtyRefOnly(refElements)
+        activities += "\t\t\t\t" + makeActivtyRefOnly(refReactionTimer)
+        activities += "\t\t\t</activities>\n"
 
         conditionContents = "collideWith:BLC_Test_Block0_Trial" + str(i) +"_Trigger0"
-        conditions = "\t\t\t\t" + makeCondition(conditionContents)
+        conditions = "\t\t\t" + makeCondition(conditionContents)
 
         contents = makeTriggerContents(activities, conditions)
         
@@ -151,12 +151,12 @@ def makeTriggerActivities():
 
         """
         refStimulus = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_Sound_Stimulus"
-        activities = "\t\t\t\t<activities>\n"
-        activities += "\t\t\t\t\t" + makeActivtyRefOnly(refStimulus)
-        activities += "\t\t\t\t</activities>\n"
+        activities = "\t\t\t<activities>\n"
+        activities += "\t\t\t\t" + makeActivtyRefOnly(refStimulus)
+        activities += "\t\t\t</activities>\n"
 
         conditionContents = "collideWith:BLC_Test_Block0_Trial" + str(i) +"_Stimulus_Trigger0"
-        conditions = "\t\t\t\t" + makeCondition(conditionContents)
+        conditions = "\t\t\t" + makeCondition(conditionContents)
 
         contents = makeTriggerContents(activities, conditions)
         
@@ -164,26 +164,3 @@ def makeTriggerActivities():
         triggers += makeTrigger(triggerId, "1", contents)
         """
     return triggers
-
-name = raw_input("Version number? ")
-
-if name != "":
-    interactionFilename = "interaction-" + name + ".xml"
-else:
-    interactionFilename = "interaction.xml"
-
-interactionfd = open(interactionFilename, "w")
-
-interactionfd.write(prologue)
-interactionfd.write(activitiesOpenTag)
-interactionfd.write(startActivities)
-interactionfd.write(makeSignTimerActivities())
-interactionfd.write(activitiesCloseTag)
-interactionfd.write(triggersOpenTag)
-interactionfd.write(startTrig)
-interactionfd.write(endTrig)
-interactionfd.write(makeTriggerActivities())
-interactionfd.write(triggerCloseTag)
-interactionfd.write(epilogue)
-
-interactionfd.close()
