@@ -2,6 +2,40 @@
 
 import interactionFuncs
 
+def makeActivity(triggerId, ref, contents):
+	s = '\t\t<activity id="' + triggerId + '" ref="' + ref + '">\n'
+	s += contents
+	s += '\t\t</activity>\n'
+	return s
+
+def makeActivtyRefOnly(ref):
+	return '<activity ref="' + ref + '"/>\n'
+
+def makeActionNoParam(delay, triggerId, repeat):
+	return '\t\t\t<action delay="' + delay + '" id="' + triggerId + '" repeat="' + repeat + '"/>\n'
+
+def makeAction(delay, triggerId, repeat, params):
+	s = '\t\t\t<action delay="' + delay + '" id="' + triggerId + '" repeat="' + repeat + '">\n'
+	s += params
+	s += '\t\t\t</action>\n'
+	return s
+
+def makeParameter(name, value):
+	s = '\t\t\t\t<parameter name="' + name + '" value="' + value + '"/>\n'
+	return s
+
+def makeTrigger(triggerId, priority, contents):
+	s = '\t\t\t<trigger id="' + triggerId + '" priority="' + priority + '">\n'
+	s += contents
+	s += '\t\t\t</trigger>\n'
+	return s
+
+def makeTriggerContents(activities, conditions):
+	return activities + conditions
+
+def makeCondition(contents):
+	return '<condition>' + contents + '</condition>\n'
+
 version = raw_input("Version number? ")
 
 print ("Remember to rename the file to scene.xml or change the file name in AudioStroop.xml before using.")
@@ -38,44 +72,44 @@ soundIDList = ["left1", "right1", "right1", "left2", "right2", "left2", "right1"
 
 for i in range(18):
 	sign = "BLC_Test_Block0_Trial" + str(i) + "_ContainerElement0"
-	params = interactionFuncs.makeParameter("visible", "true")
-	params += interactionFuncs.makeParameter("id", sign)
-	contents = interactionFuncs.makeAction("0.0", "manipulateObject", "1", params)
+	params = makeParameter("visible", "true")
+	params += makeParameter("id", sign)
+	contents = makeAction("0.0", "manipulateObject", "1", params)
 	
 	sign = "BLC_Test_Block0_Trial" + str(i) + "_ContainerElement1"
-	params = interactionFuncs.makeParameter("visible", "true")
-	params += interactionFuncs.makeParameter("id", sign)
-	contents += interactionFuncs.makeAction("0.0", "manipulateObject", "1", params)
+	params = makeParameter("visible", "true")
+	params += makeParameter("id", sign)
+	contents += makeAction("0.0", "manipulateObject", "1", params)
 	
 	sign = "BLC_Test_Block0_Trial" + str(i) + "_ContainerElement2"
-	params = interactionFuncs.makeParameter("visible", "true")
-	params += interactionFuncs.makeParameter("id", sign)
-	contents += interactionFuncs.makeAction("0.0", "manipulateObject", "1", params)
+	params = makeParameter("visible", "true")
+	params += makeParameter("id", sign)
+	contents += makeAction("0.0", "manipulateObject", "1", params)
 	
 	activityId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_makeVisible_BLC_Test_Block0_Trial" + str(i) + "_ContainerElements"
-	code += interactionFuncs.makeActivity(activityId, "", contents)
+	code += makeActivity(activityId, "", contents)
 
-	params = interactionFuncs.makeParameter("minSteeringAngle", "0")
-	params += interactionFuncs.makeParameter("targetLane", targetLaneList[i])
-	params += interactionFuncs.makeParameter("startLane", startLaneList[i])
-	params += interactionFuncs.makeParameter("taskCompletionAfterDistance", "117")
-	params += interactionFuncs.makeParameter("taskCompletionAfterTime", "7000")
-	params += interactionFuncs.makeParameter("timerID", "timer1")
-	params += interactionFuncs.makeParameter("allowBreak", "true")
-	params += interactionFuncs.makeParameter("successSound", "good")
-	params += interactionFuncs.makeParameter("congruenceClass", "LaneChange")
-	params += interactionFuncs.makeParameter("holdLaneFor", "2000")
-	params += interactionFuncs.makeParameter("failSound", "fail")
-	contents = interactionFuncs.makeAction("0.0", "setupLaneChangeReactionTimer", "1", params)
+	params = makeParameter("minSteeringAngle", "0")
+	params += makeParameter("targetLane", targetLaneList[i])
+	params += makeParameter("startLane", startLaneList[i])
+	params += makeParameter("taskCompletionAfterDistance", "117")
+	params += makeParameter("taskCompletionAfterTime", "7000")
+	params += makeParameter("timerID", "timer1")
+	params += makeParameter("allowBreak", "true")
+	params += makeParameter("successSound", "good")
+	params += makeParameter("congruenceClass", "LaneChange")
+	params += makeParameter("holdLaneFor", "2000")
+	params += makeParameter("failSound", "fail")
+	contents = makeAction("0.0", "setupLaneChangeReactionTimer", "1", params)
 	
 	activityId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_setupBrakeLaneChangeReactionTimer"
-	code += interactionFuncs.makeActivity(activityId, "", contents)
+	code += makeActivity(activityId, "", contents)
 
 	"""
-	params = interactionFuncs.makeParameter("soundID", soundIDList[i]);
-	contents = interactionFuncs.makeAction("0.0", "playSound", "1", params);
+	params = makeParameter("soundID", soundIDList[i]);
+	contents = makeAction("0.0", "playSound", "1", params);
 	activityId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_Sound_Stimulus"
-	code += interactionFuncs.makeActivity(activityId, "", contents)
+	code += makeActivity(activityId, "", contents)
 	"""
 
 code += '\t</activities>\n'
@@ -99,31 +133,31 @@ for i in range(18):
 	refElements = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_makeVisible_BLC_Test_Block0_Trial" + str(i) + "_ContainerElements"
 	refReactionTimer = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_setupBrakeLaneChangeReactionTimer"
 	activities = "\t\t\t\t<activities>\n"
-	activities += "\t\t\t\t\t" + interactionFuncs.makeActivtyRefOnly(refElements)
-	activities += "\t\t\t\t\t" + interactionFuncs.makeActivtyRefOnly(refReactionTimer)
+	activities += "\t\t\t\t\t" + makeActivtyRefOnly(refElements)
+	activities += "\t\t\t\t\t" + makeActivtyRefOnly(refReactionTimer)
 	activities += "\t\t\t\t</activities>\n"
 
 	conditionContents = "collideWith:BLC_Test_Block0_Trial" + str(i) +"_Trigger0"
-	conditions = "\t\t\t\t" + interactionFuncs.makeCondition(conditionContents)
+	conditions = "\t\t\t\t" + makeCondition(conditionContents)
 
-	contents = interactionFuncs.makeTriggerContents(activities, conditions)
+	contents = makeTriggerContents(activities, conditions)
 	
 	triggerId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0"
-	code += interactionFuncs.makeTrigger(triggerId, "1", contents)
+	code += makeTrigger(triggerId, "1", contents)
 
 	"""
 	refStimulus = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_Sound_Stimulus"
 	activities = "\t\t\t\t<activities>\n"
-	activities += "\t\t\t\t\t" + interactionFuncs.makeActivtyRefOnly(refStimulus)
+	activities += "\t\t\t\t\t" + makeActivtyRefOnly(refStimulus)
 	activities += "\t\t\t\t</activities>\n"
 
 	conditionContents = "collideWith:BLC_Test_Block0_Trial" + str(i) +"_Stimulus_Trigger0"
-	conditions = "\t\t\t\t" + interactionFuncs.makeCondition(conditionContents)
+	conditions = "\t\t\t\t" + makeCondition(conditionContents)
 
-	contents = interactionFuncs.makeTriggerContents(activities, conditions)
+	contents = makeTriggerContents(activities, conditions)
 	
 	triggerId = "BLC_Test_Block0_Trial" + str(i) + "_Stimulus_Trigger0"
-	code += interactionFuncs.makeTrigger(triggerId, "1", contents)
+	code += makeTrigger(triggerId, "1", contents)
 	"""
 
 code += '\t</triggers>\n'
