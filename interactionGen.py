@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-import interactionFuncs
-
 def makeActivity(triggerId, ref, contents):
 	s = '\t\t<activity id="' + triggerId + '" ref="' + ref + '">\n'
 	s += contents
