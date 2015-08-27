@@ -21,7 +21,7 @@ fd.write(sceneCoreXML.grass)
 fd.write(sceneCoreXML.car)
 
 sceneFuncs.makeRoad(fd, -24990.0, 24990.0)
-sceneFuncs.startObjects(fd, 24350.0)
+sceneFuncs.startObjects(fd, 24250.0)
 sceneFuncs.endObjects(fd, 21400.0)
 
 lane0 = ["correctLane", "wrongLane", "wrongLane"]

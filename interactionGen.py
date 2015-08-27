@@ -71,10 +71,12 @@ for i in range(18):
 	activityId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_setupBrakeLaneChangeReactionTimer"
 	code += interactionFuncs.makeActivity(activityId, "", contents)
 
+	"""
 	params = interactionFuncs.makeParameter("soundID", soundIDList[i]);
 	contents = interactionFuncs.makeAction("0.0", "playSound", "1", params);
 	activityId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_Sound_Stimulus"
 	code += interactionFuncs.makeActivity(activityId, "", contents)
+	"""
 
 code += '\t</activities>\n'
 code += '\t<triggers>\n'
@@ -95,8 +97,10 @@ code += '\t\t</trigger>\n'
 
 for i in range(18):
 	refElements = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_makeVisible_BLC_Test_Block0_Trial" + str(i) + "_ContainerElements"
+	refReactionTimer = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_setupBrakeLaneChangeReactionTimer"
 	activities = "\t\t\t\t<activities>\n"
 	activities += "\t\t\t\t\t" + interactionFuncs.makeActivtyRefOnly(refElements)
+	activities += "\t\t\t\t\t" + interactionFuncs.makeActivtyRefOnly(refReactionTimer)
 	activities += "\t\t\t\t</activities>\n"
 
 	conditionContents = "collideWith:BLC_Test_Block0_Trial" + str(i) +"_Trigger0"
@@ -107,11 +111,10 @@ for i in range(18):
 	triggerId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0"
 	code += interactionFuncs.makeTrigger(triggerId, "1", contents)
 
+	"""
 	refStimulus = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_Sound_Stimulus"
-	refReactionTimer = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_setupBrakeLaneChangeReactionTimer"
 	activities = "\t\t\t\t<activities>\n"
 	activities += "\t\t\t\t\t" + interactionFuncs.makeActivtyRefOnly(refStimulus)
-	activities += "\t\t\t\t\t" + interactionFuncs.makeActivtyRefOnly(refReactionTimer)
 	activities += "\t\t\t\t</activities>\n"
 
 	conditionContents = "collideWith:BLC_Test_Block0_Trial" + str(i) +"_Stimulus_Trigger0"
@@ -121,6 +124,7 @@ for i in range(18):
 	
 	triggerId = "BLC_Test_Block0_Trial" + str(i) + "_Stimulus_Trigger0"
 	code += interactionFuncs.makeTrigger(triggerId, "1", contents)
+	"""
 
 code += '\t</triggers>\n'
 code += '</interaction>\n'
