@@ -118,6 +118,7 @@ def makeSignTimerActivities():
         params += makeParameter("congruenceClass", "LaneChange")
         params += makeParameter("holdLaneFor", "2000")
         params += makeParameter("failSound", "fail")
+        params += makeParameter("comment", "Sign " + str(i+1))
         contents = makeAction("0.0", "setupLaneChangeReactionTimer", "1", params)
         
         activityId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_setupBrakeLaneChangeReactionTimer"
