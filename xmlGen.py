@@ -11,6 +11,12 @@ else:
     sceneFilename = "scene.xml"
     interactionFilename = "interaction.xml"
 
+audio = raw_input("Audio cues? y/n ")
+if audio == "y":
+	audioBool = True
+else:
+	audioBool = False
+
 # Make scene file
 scenefd = open(sceneFilename, "w")
 
@@ -40,7 +46,8 @@ for i in range(18):
     sign0 = signList[i][0]
     sign1 = signList[i][1]
     sign2 = signList[i][2]
-    bridges += sceneGen.makeBridgeSigns(i, place, sign0, sign1, sign2)
+    bridges += sceneGen.makeBridgeSignsTriggers(i, place, sign0, sign1, sign2, audioBool)
+    
 
 scenefd.write(bridges)
 scenefd.write(sceneGen.modelsCloseTag)
@@ -59,12 +66,12 @@ interactionfd = open(interactionFilename, "w")
 interactionfd.write(interactionGen.prologue)
 interactionfd.write(interactionGen.activitiesOpenTag)
 interactionfd.write(interactionGen.startActivities)
-interactionfd.write(interactionGen.makeSignTimerActivities())
+interactionfd.write(interactionGen.makeSignTimerActivities(audioBool))
 interactionfd.write(interactionGen.activitiesCloseTag)
 interactionfd.write(interactionGen.triggersOpenTag)
 interactionfd.write(interactionGen.startTrig)
 interactionfd.write(interactionGen.endTrig)
-interactionfd.write(interactionGen.makeTriggerActivities())
+interactionfd.write(interactionGen.makeTriggerActivities(audioBool))
 interactionfd.write(interactionGen.triggerCloseTag)
 interactionfd.write(interactionGen.epilogue)
 

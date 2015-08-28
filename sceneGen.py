@@ -450,9 +450,10 @@ def endObjects(place):
     '\t\t</model>\n'
     return endObs
 
-def makeBridgeSigns(num, place, sign0, sign1, sign2):
+def makeBridgeSignsTriggers(num, place, sign0, sign1, sign2, stimTrig):
     bridgeSigns = ""
-    #bridgeSigns += makeStimulusTrigger(num, place+53.3)
+    if stimTrig == True:
+        bridgeSigns += makeStimulusTrigger(num, place+53.3)
     #bridgeSigns += makeSignTrigger(num, place+40)
     bridgeSigns += makeSignTrigger(num, place+53.3)
     bridgeSigns += makeBridge(num, place)

@@ -86,7 +86,7 @@ def makeTriggerContents(activities, conditions):
 def makeCondition(contents):
     return '<condition>' + contents + '</condition>\n'
 
-def makeSignTimerActivities():
+def makeSignTimerActivities(sound):
     activities = ""
     for i in range(18):
         sign = "BLC_Test_Block0_Trial" + str(i) + "_ContainerElement0"
@@ -124,15 +124,15 @@ def makeSignTimerActivities():
         activityId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_setupBrakeLaneChangeReactionTimer"
         activities += makeActivity(activityId, "", contents)
 
-        """
-        params = makeParameter("soundID", soundIDList[i]);
-        contents = makeAction("0.0", "playSound", "1", params);
-        activityId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_Sound_Stimulus"
-        activities += makeActivity(activityId, "", contents)
-        """
+        if sound == True:
+            params = makeParameter("soundID", soundIDList[i]);
+            contents = makeAction("0.0", "playSound", "1", params);
+            activityId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_Sound_Stimulus"
+            activities += makeActivity(activityId, "", contents)
+        
     return activities
 
-def makeTriggerActivities():
+def makeTriggerActivities(sound):
     triggers = ""
     for i in range(18):
         refElements = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_makeVisible_BLC_Test_Block0_Trial" + str(i) + "_ContainerElements"
@@ -150,18 +150,18 @@ def makeTriggerActivities():
         triggerId = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0"
         triggers += makeTrigger(triggerId, "1", contents)
 
-        """
-        refStimulus = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_Sound_Stimulus"
-        activities = "\t\t\t<activities>\n"
-        activities += "\t\t\t\t" + makeActivtyRefOnly(refStimulus)
-        activities += "\t\t\t</activities>\n"
+        if sound == True:
+            refStimulus = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_Sound_Stimulus"
+            activities = "\t\t\t<activities>\n"
+            activities += "\t\t\t\t" + makeActivtyRefOnly(refStimulus)
+            activities += "\t\t\t</activities>\n"
 
-        conditionContents = "collideWith:BLC_Test_Block0_Trial" + str(i) +"_Stimulus_Trigger0"
-        conditions = "\t\t\t" + makeCondition(conditionContents)
+            conditionContents = "collideWith:BLC_Test_Block0_Trial" + str(i) +"_Stimulus_Trigger0"
+            conditions = "\t\t\t" + makeCondition(conditionContents)
 
-        contents = makeTriggerContents(activities, conditions)
-        
-        triggerId = "BLC_Test_Block0_Trial" + str(i) + "_Stimulus_Trigger0"
-        triggers += makeTrigger(triggerId, "1", contents)
-        """
+            contents = makeTriggerContents(activities, conditions)
+            
+            triggerId = "BLC_Test_Block0_Trial" + str(i) + "_Stimulus_Trigger0"
+            triggers += makeTrigger(triggerId, "1", contents)
+            
     return triggers
