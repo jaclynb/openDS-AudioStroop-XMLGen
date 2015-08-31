@@ -113,7 +113,7 @@ def makeSignTimerActivities(sound):
         params += makeParameter("taskCompletionAfterDistance", "117")
         params += makeParameter("taskCompletionAfterTime", "7000")
         params += makeParameter("timerID", "timer1")
-        params += makeParameter("allowBreak", "true")
+        params += makeParameter("allowBrake", "true")
         params += makeParameter("successSound", "good")
         params += makeParameter("congruenceClass", "LaneChange")
         params += makeParameter("holdLaneFor", "2000")
