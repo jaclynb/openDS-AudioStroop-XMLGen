@@ -14,6 +14,7 @@ startActivities = '\t\t<activity id="Start_startRM" ref="">\n\
 \t\t\t</action>\n\
 \t\t</activity>\n\
 \t\t<activity id="End_stopRecording" ref="">\n\
+\t\t\t<action delay="0.0" id="stopRecording" repeat="4"/>\n\
 \t\t</activity>\n\
 \t\t<activity id="End_pauseSimulation" ref="">\n\
 \t\t\t<action delay="0.0" id="pauseSimulation" repeat="4">\n\
@@ -45,12 +46,24 @@ triggerCloseTag = '\t</triggers>\n'
 
 epilogue = '</interaction>\n'
 
-targetLaneList = ["2", "1", "0", "2", "0", "2", "1", "2", "0", "2", "0", "1", "2", "1", "0", "1", "0", "1"]
+track0Sounds = ["toneL1", "toneR1", "toneR1", "toneL2", "ttsR2panright", "ttsL2panleft", "ttsL1panright", "ttsR1panleft", "ttsR2panleft", "ttsL2panright", "ttsL2panleft", "ttsR1panright", "toneL1", "toneR1", "ttsL1panright", "ttsL1panleft", "ttsR1panleft", "ttsR1panright"]
+track1Sounds = ["L1", "R1", "R1", "L2", "R2", "L2", "R1", "L1", "R2", "L2", "R2", "L1", "L1", "R1", "R1", "L1", "R1", "L1"]
+track2Sounds = ["R1", "L1", "L1", "L2", "L2", "R2", "R1", "R1", "L2", "R2", "L2", "L1", "L1", "L1", "L1", "R1", "R1", "R1"]
+track3Sounds = ["L1panleft", "R1panright", "R1panright", "L2panleft", "R2panright", "L2panleft", "R1panright", "L1panleft", "R2panright", "L2panleft", "R2panright", "L1panleft", "L1panleft", "R1panright", "R1panright", "L1panleft", "R1panright", "L1panleft"]
+track4Sounds = ["R1panleft", "L1panright", "L1panright", "L2panleft", "L2panright", "R2panleft", "R1panright", "R1panleft", "L2panright", "R2panleft", "L2panright", "L1panleft", "L1panleft", "L1panright", "L1panright", "R1panleft", "R1panright", "R1panleft"]
+track5Sounds = ["L1panright", "R1panleft", "R1panleft", "L2panleft", "R2panleft", "L2panright", "R1panright", "L1panright", "R2panleft", "L2panright", "R2panleft", "L1panleft", "L1panleft", "R1panleft", "R1panleft", "L1panright", "R1panright", "L1panright"]
+track6Sounds = ["L1", "R1", "R1", "L2", "R2", "L2", "R1", "L1", "R2", "L2", "R2", "L1", "L1", "R1", "R1", "L1", "R1", "L1"]
+track7Sounds = ["R1", "L1", "L1", "L2", "L2", "R2", "R1", "R1", "L2", "R2", "L2", "L1", "L1", "L1", "L1", "R1", "R1", "R1"]
+track8Sounds = ["L1panleft", "R1panright", "R1panright", "L2panleft", "R2panright", "L2panleft", "R1panright", "L1panleft", "R2panright", "L2panleft", "R2panright", "L1panleft", "L1panleft", "R1panright", "R1panright", "L1panleft", "R1panright", "L1panleft"] 
+track9Sounds = ["R1panleft", "L1panright", "L1panright", "L2panleft", "L2panright", "R2panleft", "R1panright", "R1panleft", "L2panright", "R2panleft", "L2panright", "L1panleft", "L1panleft", "L1panright", "L1panright", "R1panleft", "R1panright", "R1panleft"]
+track10Sounds = ["L1panright", "R1panleft", "R1panleft", "L2panleft", "R2panleft", "L2panright", "R1panright", "L1panright", "R2panleft", "L2panright", "R2panleft", "L1panleft", "L1panleft", "R1panleft", "R1panleft", "L1panright", "R1panright", "L1panright"]
+track11Sounds = ["R1panright", "L1panleft", "L1panleft", "L2panleft", "L2panleft", "R2panright", "R1panright", "R1panright", "L2panleft", "R2panright", "L2panleft", "L1panleft", "L1panleft", "L1panleft", "L1panleft", "R1panright", "R1panright", "R1panright"]
+track12Sounds = ["R1panright", "L1panleft", "L1panleft", "L2panleft", "L2panleft", "R2panright", "R1panright", "R1panright", "L2panleft", "R2panright", "L2panleft", "L1panleft", "L1panleft", "L1panleft", "L1panleft", "R1panright", "R1panright", "R1panright"]
+#track13 is visual only, no sounds
 
-startLaneList =  ["1", "2", "1", "0", "2", "0", "2", "1", "2", "0", "2", "0", "1", "2", "1", "0", "1", "0"]
-
-soundIDList = ["left1", "right1", "right1", "left2", "right2", "left2", "right1", "left1", "right2", \
-                "left2", "right2", "left1", "left1", "right1", "right1", "left1", "right1", "left1"]
+soundIDList = track0Sounds
+startLaneList = [1, 2, 1, 0, 2, 0, 2, 1, 2, 0, 2, 0, 1, 2, 1, 0, 1, 0]
+targetLaneList = [2, 1, 0, 2, 0, 2, 1, 2, 0, 2, 0, 1, 2, 1, 0, 1, 0, 1]
 
 def makeActivity(triggerId, ref, contents):
     activity = '\t\t<activity id="' + triggerId + '" ref="' + ref + '">\n'
@@ -108,8 +121,8 @@ def makeSignTimerActivities(sound):
         activities += makeActivity(activityId, "", contents)
 
         params = makeParameter("minSteeringAngle", "0")
-        params += makeParameter("targetLane", targetLaneList[i])
-        params += makeParameter("startLane", startLaneList[i])
+        params += makeParameter("targetLane", str(targetLaneList[i]))
+        params += makeParameter("startLane", str(startLaneList[i]))
         params += makeParameter("taskCompletionAfterDistance", "117")
         params += makeParameter("taskCompletionAfterTime", "7000")
         params += makeParameter("timerID", "timer1")
@@ -136,10 +149,8 @@ def makeTriggerActivities(sound):
     triggers = ""
     for i in range(18):
         refElements = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_makeVisible_BLC_Test_Block0_Trial" + str(i) + "_ContainerElements"
-        refReactionTimer = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_setupBrakeLaneChangeReactionTimer"
         activities = "\t\t\t<activities>\n"
         activities += "\t\t\t\t" + makeActivtyRefOnly(refElements)
-        activities += "\t\t\t\t" + makeActivtyRefOnly(refReactionTimer)
         activities += "\t\t\t</activities>\n"
 
         conditionContents = "collideWith:BLC_Test_Block0_Trial" + str(i) +"_Trigger0"
@@ -152,8 +163,10 @@ def makeTriggerActivities(sound):
 
         if sound == True:
             refStimulus = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_Sound_Stimulus"
+            refReactionTimer = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_setupBrakeLaneChangeReactionTimer"
             activities = "\t\t\t<activities>\n"
             activities += "\t\t\t\t" + makeActivtyRefOnly(refStimulus)
+            activities += "\t\t\t\t" + makeActivtyRefOnly(refReactionTimer)
             activities += "\t\t\t</activities>\n"
 
             conditionContents = "collideWith:BLC_Test_Block0_Trial" + str(i) +"_Stimulus_Trigger0"

@@ -5,42 +5,28 @@ prologue = '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n' + \
 ' xsi:schemaLocation="http://opends.eu/drivingtask/scene ../../Schema/scene.xsd">\n'
 
 sounds = '\t<sounds>\n\
-\t\t<sound id="good" key="Sounds/Effects/Beep.ogg">\n\
+\t\t<sound id="L1panleft" key="Sounds/AudioStroop/toneleft350msec.wav">\n\
 \t\t\t<positional value="false"/>\n\
 \t\t\t<directional value="false"/>\n\
 \t\t\t<loop>false</loop>\n\
 \t\t\t<volume>0.5</volume>\n\
 \t\t\t<pitch>1.0</pitch>\n\
 \t\t</sound>\n\
-\t\t<sound id="fail" key="Sounds/Effects/Beep.ogg">\n\
+\t\t<sound id="R1panright" key="Sounds/AudioStroop/toneright350msec.wav">\n\
 \t\t\t<positional value="false"/>\n\
 \t\t\t<directional value="false"/>\n\
 \t\t\t<loop>false</loop>\n\
 \t\t\t<volume>0.5</volume>\n\
 \t\t\t<pitch>1.0</pitch>\n\
 \t\t</sound>\n\
-\t\t<sound id="left1" key="Sounds/AudioStroop/toneleft350msec.wav">\n\
+\t\t<sound id="L2panleft" key="Sounds/AudioStroop/consecutiveleft.wav">\n\
 \t\t\t<positional value="false"/>\n\
 \t\t\t<directional value="false"/>\n\
 \t\t\t<loop>false</loop>\n\
 \t\t\t<volume>0.5</volume>\n\
 \t\t\t<pitch>1.0</pitch>\n\
 \t\t</sound>\n\
-\t\t<sound id="right1" key="Sounds/AudioStroop/toneright350msec.wav">\n\
-\t\t\t<positional value="false"/>\n\
-\t\t\t<directional value="false"/>\n\
-\t\t\t<loop>false</loop>\n\
-\t\t\t<volume>0.5</volume>\n\
-\t\t\t<pitch>1.0</pitch>\n\
-\t\t</sound>\n\
-\t\t<sound id="left2" key="Sounds/AudioStroop/consecutiveleft.wav">\n\
-\t\t\t<positional value="false"/>\n\
-\t\t\t<directional value="false"/>\n\
-\t\t\t<loop>false</loop>\n\
-\t\t\t<volume>0.5</volume>\n\
-\t\t\t<pitch>1.0</pitch>\n\
-\t\t</sound>\n\
-\t\t<sound id="right2" key="Sounds/AudioStroop/consecutiveright.wav">\n\
+\t\t<sound id="R2panright" key="Sounds/AudioStroop/consecutiveright.wav">\n\
 \t\t\t<positional value="false"/>\n\
 \t\t\t<directional value="false"/>\n\
 \t\t\t<loop>false</loop>\n\
@@ -453,9 +439,8 @@ def endObjects(place):
 def makeBridgeSignsTriggers(num, place, sign0, sign1, sign2, stimTrig):
     bridgeSigns = ""
     if stimTrig == True:
-        bridgeSigns += makeStimulusTrigger(num, place+53.3)
-    #bridgeSigns += makeSignTrigger(num, place+40)
-    bridgeSigns += makeSignTrigger(num, place+53.3)
+        bridgeSigns += makeStimulusTrigger(num, place+40)
+    bridgeSigns += makeSignTrigger(num, place+40)
     bridgeSigns += makeBridge(num, place)
     bridgeSigns += makeSign(num, place, 0, sign0)
     bridgeSigns += makeSign(num, place, 1, sign1)
