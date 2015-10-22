@@ -46,7 +46,7 @@ triggerCloseTag = '\t</triggers>\n'
 
 epilogue = '</interaction>\n'
 
-track0Sounds = ["toneL1", "toneR1", "toneR1", "toneL2", "ttsR2panright", "ttsL2panleft", "ttsL1panright", "ttsR1panleft", "ttsR2panleft", "ttsL2panright", "ttsL2panleft", "ttsR1panright", "toneL1", "toneR1", "ttsL1panright", "ttsL1panleft", "ttsR1panleft", "ttsR1panright"]
+track0Sounds = ["toneL1", "toneR1", "toneL1", "toneR2", "ttsR2panright", "ttsL2panleft", "ttsL1panright", "ttsR1panleft", "ttsR2panleft", "ttsL2panright", "ttsL2panleft", "ttsR1panright", "toneL1", "toneL1", "ttsL1panright", "ttsL1panleft", "ttsR1panleft", "ttsR1panright"]
 track1Sounds = ["L1", "R1", "R1", "L2", "R2", "L2", "R1", "L1", "R2", "L2", "R2", "L1", "L1", "R1", "R1", "L1", "R1", "L1"]
 track2Sounds = ["R1", "L1", "L1", "L2", "L2", "R2", "R1", "R1", "L2", "R2", "L2", "L1", "L1", "L1", "L1", "R1", "R1", "R1"]
 track3Sounds = ["L1panleft", "R1panright", "R1panright", "L2panleft", "R2panright", "L2panleft", "R1panright", "L1panleft", "R2panright", "L2panleft", "R2panright", "L1panleft", "L1panleft", "R1panright", "R1panright", "L1panleft", "R1panright", "L1panleft"]
@@ -151,6 +151,9 @@ def makeTriggerActivities(sound):
         refElements = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_makeVisible_BLC_Test_Block0_Trial" + str(i) + "_ContainerElements"
         activities = "\t\t\t<activities>\n"
         activities += "\t\t\t\t" + makeActivtyRefOnly(refElements)
+        if sound == False:
+            refReactionTimer = "BLC_Test_Block0_Trial" + str(i) + "_Trigger0_setupBrakeLaneChangeReactionTimer"
+            activities += "\t\t\t\t" + makeActivtyRefOnly(refReactionTimer)
         activities += "\t\t\t</activities>\n"
 
         conditionContents = "collideWith:BLC_Test_Block0_Trial" + str(i) +"_Trigger0"
