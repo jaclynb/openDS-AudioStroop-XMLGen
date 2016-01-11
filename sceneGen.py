@@ -495,7 +495,7 @@ def endObjects(place):
 def makeBridgeSignsTriggers(num, place, sign0, sign1, sign2, stimTrig):
     bridgeSigns = ""
     if stimTrig == True:
-        bridgeSigns += makeStimulusTrigger(num, place+40)
+        bridgeSigns += makeStimulusTrigger(num, place+46.26)
     bridgeSigns += makeSignTrigger(num, place+40)
     bridgeSigns += makeBridge(num, place)
     bridgeSigns += makeSign(num, place, 0, sign0)
