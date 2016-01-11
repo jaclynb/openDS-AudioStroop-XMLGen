@@ -37,6 +37,7 @@ props += "<entry key=\"scene\">" + sceneFilename + "</entry>\n"
 props += "</properties>\n"
 
 propertiesfd.write(props)
+propertiesfd.close()
 
 # Make scene file
 scenefd = open(sceneFilename, "w")
