@@ -123,13 +123,13 @@ def makeSignTimerActivities(sound):
         params = makeParameter("minSteeringAngle", "0")
         params += makeParameter("targetLane", str(targetLaneList[i]))
         params += makeParameter("startLane", str(startLaneList[i]))
-        params += makeParameter("taskCompletionAfterDistance", "117")
-        params += makeParameter("taskCompletionAfterTime", "7000")
+        params += makeParameter("taskCompletionAfterDistance", "110") #Used to be 117 for 60 kph
+        params += makeParameter("taskCompletionAfterTime", "3600") #Used to be 7000 for 60 kph
         params += makeParameter("timerID", "timer1")
         params += makeParameter("allowBrake", "true")
         params += makeParameter("successSound", "good")
         params += makeParameter("congruenceClass", "LaneChange")
-        params += makeParameter("holdLaneFor", "2000")
+        params += makeParameter("holdLaneFor", "1000") #Used to be 1000 for 60 kph
         params += makeParameter("failSound", "fail")
         params += makeParameter("comment", "Sign " + str(i+1))
         contents = makeAction("0.0", "setupLaneChangeReactionTimer", "1", params)
