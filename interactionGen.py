@@ -47,7 +47,7 @@ triggerCloseTag = '\t</triggers>\n'
 epilogue = '</interaction>\n'
 
 
-track0Sounds = ["toneL1", "toneR1", "toneR1", "toneL2", "ttsR2panright", "ttsL2panleft", "ttsL1panright", "ttsR1panleft", "ttsR2panleft", "ttsL2panright", "ttsL2panleft", "ttsR1panright", "toneL1", "toneR1", "ttsL1panright", "ttsL1panleft", "ttsR1panleft", "ttsR1panright"]
+track0Sounds = ["toneL1", "toneR1", "toneL1", "toneR2", "ttsR2panright", "ttsL2panleft", "ttsL1panright", "ttsR1panleft", "ttsR2panleft", "ttsL2panright", "ttsL2panleft", "ttsR1panright", "toneL1", "toneL1", "ttsL1panright", "ttsL1panleft", "ttsR1panleft", "ttsR1panright"]
 track1Sounds = ["toneL1", "toneR1", "toneR1", "toneR2", "toneR2", "toneL2", "toneL1", "toneL1", "toneR2", "toneL2", "toneR2", "toneR1", "toneR1", "toneR1", "toneR1", "toneL1", "toneL1", "toneL1"]
 track2Sounds = ["toneR1", "toneL1", "toneL1", "toneL2", "toneL2", "toneR2", "toneR1", "toneR1", "toneL2", "toneR2", "toneL2", "toneL1", "toneL1", "toneL1", "toneL1", "toneR1", "toneR1", "toneR1"]
 track3Sounds = ["ttsL1panleft", "ttsR1panright", "ttsR1panright", "ttsR2panright", "ttsR2panright", "ttsL2panleft", "ttsL1panleft", "ttsL1panleft", "ttsR2panright", "ttsL2panleft", "ttsR2panright", "ttsR1panright", "ttsR1panright", "ttsR1panright", "ttsR1panright", "ttsL1panleft", "ttsL1panleft", "ttsL1panleft"]
