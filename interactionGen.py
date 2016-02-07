@@ -46,19 +46,20 @@ triggerCloseTag = '\t</triggers>\n'
 
 epilogue = '</interaction>\n'
 
-track0Sounds = ["toneL1", "toneR1", "toneL1", "toneR2", "ttsR2panright", "ttsL2panleft", "ttsL1panright", "ttsR1panleft", "ttsR2panleft", "ttsL2panright", "ttsL2panleft", "ttsR1panright", "toneL1", "toneL1", "ttsL1panright", "ttsL1panleft", "ttsR1panleft", "ttsR1panright"]
-track1Sounds = ["L1", "R1", "R1", "L2", "R2", "L2", "R1", "L1", "R2", "L2", "R2", "L1", "L1", "R1", "R1", "L1", "R1", "L1"]
-track2Sounds = ["R1", "L1", "L1", "L2", "L2", "R2", "R1", "R1", "L2", "R2", "L2", "L1", "L1", "L1", "L1", "R1", "R1", "R1"]
-track3Sounds = ["L1panleft", "R1panright", "R1panright", "L2panleft", "R2panright", "L2panleft", "R1panright", "L1panleft", "R2panright", "L2panleft", "R2panright", "L1panleft", "L1panleft", "R1panright", "R1panright", "L1panleft", "R1panright", "L1panleft"]
-track4Sounds = ["R1panleft", "L1panright", "L1panright", "L2panleft", "L2panright", "R2panleft", "R1panright", "R1panleft", "L2panright", "R2panleft", "L2panright", "L1panleft", "L1panleft", "L1panright", "L1panright", "R1panleft", "R1panright", "R1panleft"]
-track5Sounds = ["L1panright", "R1panleft", "R1panleft", "L2panleft", "R2panleft", "L2panright", "R1panright", "L1panright", "R2panleft", "L2panright", "R2panleft", "L1panleft", "L1panleft", "R1panleft", "R1panleft", "L1panright", "R1panright", "L1panright"]
-track6Sounds = ["L1", "R1", "R1", "L2", "R2", "L2", "R1", "L1", "R2", "L2", "R2", "L1", "L1", "R1", "R1", "L1", "R1", "L1"]
-track7Sounds = ["R1", "L1", "L1", "L2", "L2", "R2", "R1", "R1", "L2", "R2", "L2", "L1", "L1", "L1", "L1", "R1", "R1", "R1"]
-track8Sounds = ["L1panleft", "R1panright", "R1panright", "L2panleft", "R2panright", "L2panleft", "R1panright", "L1panleft", "R2panright", "L2panleft", "R2panright", "L1panleft", "L1panleft", "R1panright", "R1panright", "L1panleft", "R1panright", "L1panleft"] 
-track9Sounds = ["R1panleft", "L1panright", "L1panright", "L2panleft", "L2panright", "R2panleft", "R1panright", "R1panleft", "L2panright", "R2panleft", "L2panright", "L1panleft", "L1panleft", "L1panright", "L1panright", "R1panleft", "R1panright", "R1panleft"]
-track10Sounds = ["L1panright", "R1panleft", "R1panleft", "L2panleft", "R2panleft", "L2panright", "R1panright", "L1panright", "R2panleft", "L2panright", "R2panleft", "L1panleft", "L1panleft", "R1panleft", "R1panleft", "L1panright", "R1panright", "L1panright"]
-track11Sounds = ["R1panright", "L1panleft", "L1panleft", "L2panleft", "L2panleft", "R2panright", "R1panright", "R1panright", "L2panleft", "R2panright", "L2panleft", "L1panleft", "L1panleft", "L1panleft", "L1panleft", "R1panright", "R1panright", "R1panright"]
-track12Sounds = ["R1panright", "L1panleft", "L1panleft", "L2panleft", "L2panleft", "R2panright", "R1panright", "R1panright", "L2panleft", "R2panright", "L2panleft", "L1panleft", "L1panleft", "L1panleft", "L1panleft", "R1panright", "R1panright", "R1panright"]
+
+track0Sounds = ["toneL1", "toneR1", "toneR1", "toneL2", "ttsR2panright", "ttsL2panleft", "ttsL1panright", "ttsR1panleft", "ttsR2panleft", "ttsL2panright", "ttsL2panleft", "ttsR1panright", "toneL1", "toneR1", "ttsL1panright", "ttsL1panleft", "ttsR1panleft", "ttsR1panright"]
+track1Sounds = ["toneL1", "toneR1", "toneR1", "toneR2", "toneR2", "toneL2", "toneL1", "toneL1", "toneR2", "toneL2", "toneR2", "toneR1", "toneR1", "toneR1", "toneR1", "toneL1", "toneL1", "toneL1"]
+track2Sounds = ["toneR1", "toneL1", "toneL1", "toneL2", "toneL2", "toneR2", "toneR1", "toneR1", "toneL2", "toneR2", "toneL2", "toneL1", "toneL1", "toneL1", "toneL1", "toneR1", "toneR1", "toneR1"]
+track3Sounds = ["ttsL1panleft", "ttsR1panright", "ttsR1panright", "ttsR2panright", "ttsR2panright", "ttsL2panleft", "ttsL1panleft", "ttsL1panleft", "ttsR2panright", "ttsL2panleft", "ttsR2panright", "ttsR1panright", "ttsR1panright", "ttsR1panright", "ttsR1panright", "ttsL1panleft", "ttsL1panleft", "ttsL1panleft"]
+track4Sounds = ["ttsR1panleft", "ttsL1panright", "ttsL1panright", "ttsL2panleft", "ttsL2panright", "ttsR2panleft", "ttsR1panright", "ttsR1panleft", "ttsL2panright", "ttsR2panleft", "ttsL2panright", "ttsL1panleft", "ttsL1panleft", "ttsL1panright", "ttsL1panright", "ttsR1panleft", "ttsR1panright", "ttsR1panleft"]
+track5Sounds = ["ttsL1panright", "ttsR1panleft", "ttsR1panleft", "ttsL2panleft", "ttsR2panleft", "ttsL2panright", "ttsR1panright", "ttsL1panright", "ttsR2panleft", "ttsL2panright", "ttsR2panleft", "ttsL1panleft", "ttsL1panleft", "ttsR1panleft", "ttsR1panleft", "ttsL1panright", "ttsR1panright", "ttsL1panright"]
+track6Sounds = ["toneL1", "toneR1", "toneR1", "toneR2", "toneR2", "toneL2", "toneL1", "toneL1", "toneR2", "toneL2", "toneR2", "toneR1", "toneR1", "toneR1", "toneR1", "toneL1", "toneL1", "toneL1"]
+track7Sounds = ["toneR1", "toneL1", "toneL1", "toneL2", "toneL2", "toneR2", "toneR1", "toneR1", "toneL2", "toneR2", "toneL2", "toneL1", "toneL1", "toneL1", "toneL1", "toneR1", "toneR1", "toneR1"]
+track8Sounds = ["ttsL1panleft", "ttsR1panright", "ttsR1panright", "ttsR2panright", "ttsR2panright", "ttsL2panleft", "ttsL1panleft", "ttsL1panleft", "ttsR2panright", "ttsL2panleft", "ttsR2panright", "ttsR1panright", "ttsR1panright", "ttsR1panright", "ttsR1panright", "ttsL1panleft", "ttsL1panleft", "ttsL1panleft"]
+track9Sounds = ["ttsR1panleft", "ttsL1panright", "ttsL1panright", "ttsL2panleft", "ttsL2panright", "ttsR2panleft", "ttsR1panright", "ttsR1panleft", "ttsL2panright", "ttsR2panleft", "ttsL2panright", "ttsL1panleft", "ttsL1panleft", "ttsL1panright", "ttsL1panright", "ttsR1panleft", "ttsR1panright", "ttsR1panleft"]
+track10Sounds = ["ttsL1panright", "ttsR1panleft", "ttsR1panleft", "ttsL2panleft", "ttsR2panleft", "ttsL2panright", "ttsR1panright", "ttsL1panright", "ttsR2panleft", "ttsL2panright", "ttsR2panleft", "ttsL1panleft", "ttsL1panleft", "ttsR1panleft", "ttsR1panleft", "ttsL1panright", "ttsR1panright", "ttsL1panright"]
+track11Sounds = ["ttsR1panright", "ttsL1panleft", "ttsL1panleft", "ttsL2panleft", "ttsL2panleft", "ttsR2panright", "ttsR1panright", "ttsR1panright", "ttsL2panleft", "ttsR2panright", "ttsL2panleft", "ttsL1panleft", "ttsL1panleft", "ttsL1panleft", "ttsL1panleft", "ttsR1panright", "ttsR1panright", "ttsR1panright"]
+track12Sounds = ["ttsR1panright", "ttsL1panleft", "ttsL1panleft", "ttsL2panleft", "ttsL2panleft", "ttsR2panright", "ttsR1panright", "ttsR1panright", "ttsL2panleft", "ttsR2panright", "ttsL2panleft", "ttsL1panleft", "ttsL1panleft", "ttsL1panleft", "ttsL1panleft", "ttsR1panright", "ttsR1panright", "ttsR1panright"]
 #track13 is visual only, no sounds
 
 soundIDList = track0Sounds
@@ -123,13 +124,13 @@ def makeSignTimerActivities(sound):
         params = makeParameter("minSteeringAngle", "0")
         params += makeParameter("targetLane", str(targetLaneList[i]))
         params += makeParameter("startLane", str(startLaneList[i]))
-        params += makeParameter("taskCompletionAfterDistance", "110") #Used to be 117 for 60 kph
-        params += makeParameter("taskCompletionAfterTime", "3600") #Used to be 7000 for 60 kph
+        params += makeParameter("taskCompletionAfterDistance", "120") #Used to be 117 for 60 kph
+        params += makeParameter("taskCompletionAfterTime", "4000") #Used to be 7000 for 60 kph
         params += makeParameter("timerID", "timer1")
         params += makeParameter("allowBrake", "true")
         params += makeParameter("successSound", "good")
         params += makeParameter("congruenceClass", "LaneChange")
-        params += makeParameter("holdLaneFor", "1000") #Used to be 1000 for 60 kph
+        params += makeParameter("holdLaneFor", "800") #Used to be 1000 for 60 kph
         params += makeParameter("failSound", "fail")
         params += makeParameter("comment", "Sign " + str(i+1))
         contents = makeAction("0.0", "setupLaneChangeReactionTimer", "1", params)

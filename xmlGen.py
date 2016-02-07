@@ -50,7 +50,7 @@ scenefd.write(sceneGen.car)
 
 scenefd.write(sceneGen.makeRoad(-24990.0, 24990.0))
 scenefd.write(sceneGen.startObjects(24250.0))
-scenefd.write(sceneGen.endObjects(21500.0))
+scenefd.write(sceneGen.endObjects(21420.0))
 
 lane0 = ["correctLane", "wrongLane", "wrongLane"]
 lane1 = ["wrongLane", "correctLane", "wrongLane"]
